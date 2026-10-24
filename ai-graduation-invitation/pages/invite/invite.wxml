@@ -1,0 +1,86 @@
+<view class="page">
+  <!-- 封面：神经网络粒子背景 -->
+  <view class="hero">
+    <canvas type="2d" id="neural" class="neural"></canvas>
+    <view class="hero-inner">
+      <view class="cap">🎓</view>
+      <view class="college">{{EVENT.college}}</view>
+      <view class="chip">GRADUATION CEREMONY · {{EVENT.year}}</view>
+      <view class="title">{{EVENT.title}}邀请函</view>
+      <view class="divider"></view>
+      <view class="slogan">{{EVENT.slogan}}</view>
+    </view>
+  </view>
+
+  <view class="body">
+    <!-- 身份选择与个性化问候 -->
+    <view class="card">
+      <view class="card-title">选择你的身份</view>
+      <view class="seg">
+        <view class="seg-item {{role === 'teacher' ? 'on' : ''}}" bindtap="onRole" data-role="teacher">👔 教师</view>
+        <view class="seg-item {{role === 'student' ? 'on' : ''}}" bindtap="onRole" data-role="student">🎓 毕业生</view>
+        <view class="seg-item {{role === 'alumni' ? 'on' : ''}}" bindtap="onRole" data-role="alumni">🤝 校友</view>
+      </view>
+      <view class="greeting">{{greeting}}</view>
+    </view>
+
+    <!-- 倒计时 -->
+    <view class="card cd-card">
+      <view class="cd-label">{{cd.passed ? '典礼正在进行' : '距离毕业典礼还有'}}</view>
+      <view class="cd-row">
+        <view class="cd-box"><view class="cd-num">{{cd.d}}</view><view class="cd-unit">天</view></view>
+        <view class="cd-box"><view class="cd-num">{{cd.h}}</view><view class="cd-unit">时</view></view>
+        <view class="cd-box"><view class="cd-num">{{cd.m}}</view><view class="cd-unit">分</view></view>
+        <view class="cd-box"><view class="cd-num">{{cd.s}}</view><view class="cd-unit">秒</view></view>
+      </view>
+    </view>
+
+    <!-- 典礼信息 -->
+    <view class="card">
+      <view class="card-title">典礼信息</view>
+      <view class="info-row">
+        <text class="ico">🕘</text>
+        <view class="info-main">
+          <view class="info-label">时间</view>
+          <view class="info-value">{{EVENT.dateText}}</view>
+        </view>
+      </view>
+      <view class="info-row">
+        <text class="ico">📍</text>
+        <view class="info-main">
+          <view class="info-label">地点</view>
+          <view class="info-value">{{EVENT.location}}</view>
+          <view class="info-sub" bindtap="copyAddress">{{EVENT.address}} <text class="copy">复制</text></view>
+        </view>
+      </view>
+      <view class="btn-row">
+        <button class="btn ghost" bindtap="openMap">🗺️ 导航到现场</button>
+        <button class="btn solid" bindtap="addCalendar">＋ 提醒我</button>
+      </view>
+    </view>
+
+    <!-- 快捷入口 -->
+    <view class="grid">
+      <view class="grid-item" bindtap="goSchedule">
+        <view class="grid-ico">🗓️</view>
+        <view class="grid-text">日程安排</view>
+      </view>
+      <view class="grid-item" bindtap="goBlessing">
+        <view class="grid-ico">💗</view>
+        <view class="grid-text">祝福墙</view>
+      </view>
+      <view class="grid-item" bindtap="goGuide">
+        <view class="grid-ico">📌</view>
+        <view class="grid-text">参会指南</view>
+      </view>
+    </view>
+
+    <button class="share-btn" open-type="share">✉️ 把这份喜悦分享给更多的人</button>
+
+    <view class="footer">
+      <view class="footer-line"></view>
+      <view class="footer-text">{{EVENT.college}} · {{EVENT.year}}届毕业典礼筹备组</view>
+      <view class="footer-slogan">{{EVENT.slogan}}</view>
+    </view>
+  </view>
+</view>

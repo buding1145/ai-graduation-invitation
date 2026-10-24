@@ -1,0 +1,46 @@
+/* app.wxss 全局样式 */
+page {
+  --primary: #3b53e0;
+  --primary-deep: #1e2f7a;
+  --violet: #6a3df0;
+  --cyan: #38bdf8;
+  --gold: #f5b83d;
+  --bg: #f4f6fb;
+  --text: #1f2433;
+  --text-sub: #6b7280;
+  --card: #ffffff;
+  --radius: 28rpx;
+
+  background: var(--bg);
+  color: var(--text);
+  font-size: 28rpx;
+  font-family: -apple-system, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+}
+
+/* 通用卡片 */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 32rpx;
+  box-shadow: 0 8rpx 30rpx rgba(30, 47, 122, 0.06);
+}
+
+.card-title {
+  font-size: 32rpx;
+  font-weight: 700;
+  margin-bottom: 20rpx;
+}
+
+/* 按钮样式重置（全部使用自定义按钮） */
+button {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  line-height: inherit;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+}
+button::after {
+  border: none;
+}

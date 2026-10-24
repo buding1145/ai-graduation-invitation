@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/invite/invite",
+    "pages/schedule/schedule",
+    "pages/blessing/blessing",
+    "pages/guide/guide"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1e2f7a",
+    "navigationBarTitleText": "AI学院 · 毕业典礼",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f4f6fb",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#9aa3b5",
+    "selectedColor": "#3b53e0",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/invite/invite",
+        "text": "邀请函",
+        "iconPath": "assets/icons/mail.png",
+        "selectedIconPath": "assets/icons/mail-active.png"
+      },
+      {
+        "pagePath": "pages/schedule/schedule",
+        "text": "日程",
+        "iconPath": "assets/icons/calendar.png",
+        "selectedIconPath": "assets/icons/calendar-active.png"
+      },
+      {
+        "pagePath": "pages/blessing/blessing",
+        "text": "祝福",
+        "iconPath": "assets/icons/heart.png",
+        "selectedIconPath": "assets/icons/heart-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}

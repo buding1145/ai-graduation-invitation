@@ -1,0 +1,68 @@
+<view class="page">
+  <!-- 地点与交通 -->
+  <view class="card">
+    <view class="card-title">📍 地点与交通</view>
+    <view class="row">
+      <view class="row-tag">地铁</view>
+      <view class="row-text">乘坐地铁 2 号线至「大学城站」B 口出，步行约 600 米即到。</view>
+    </view>
+    <view class="row">
+      <view class="row-tag">公交</view>
+      <view class="row-text">15 路 / 28 路 / 503 路至「人工智能学院站」，下车步行 300 米。</view>
+    </view>
+    <view class="row">
+      <view class="row-tag">驾车</view>
+      <view class="row-text">导航至「大学路1号（东门）」，典礼当天校内开放临时停车。</view>
+    </view>
+  </view>
+
+  <!-- 着装建议 -->
+  <view class="card">
+    <view class="card-title">👔 着装建议</view>
+    <view class="row">
+      <view class="row-tag">毕业生</view>
+      <view class="row-text">统一着学士服、学位帽，建议深色皮鞋。</view>
+    </view>
+    <view class="row">
+      <view class="row-tag">教师</view>
+      <view class="row-text">正装出席。</view>
+    </view>
+    <view class="row">
+      <view class="row-tag">亲友</view>
+      <view class="row-text">商务休闲或正装均可；6月天气多变，建议随身携带雨具。</view>
+    </view>
+  </view>
+
+  <!-- 温馨提示 -->
+  <view class="card">
+    <view class="card-title">📋 温馨提示</view>
+    <view class="row">
+      <view class="row-tag">入场</view>
+      <view class="row-text">请提前 30 分钟入场，对号入座；当天 7:30 起开放入校。</view>
+    </view>
+    <view class="row">
+      <view class="row-tag">秩序</view>
+      <view class="row-text">典礼期间请将手机调至静音，勿随意走动。</view>
+    </view>
+    <view class="row">
+      <view class="row-tag">拍照</view>
+      <view class="row-text">拨穗环节为高光时刻，亲友可在指定摄影区拍照留念。</view>
+    </view>
+    <view class="row">
+      <view class="row-tag">直播</view>
+      <view class="row-text">无法到场的师生亲友，可通过学院视频号观看全程直播。</view>
+    </view>
+  </view>
+
+  <!-- 常见问题 -->
+  <view class="card">
+    <view class="card-title">❓ 常见问题</view>
+    <view class="faq-item" wx:for="{{faqs}}" wx:key="q">
+      <view class="faq-q" bindtap="toggleFaq" data-i="{{index}}">
+        <view>{{item.q}}</view>
+        <view class="faq-arrow {{item.open ? 'open' : ''}}">▶</view>
+      </view>
+      <view class="faq-a" wx:if="{{item.open}}">{{item.a}}</view>
+    </view>
+  </view>
+</view>

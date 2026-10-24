@@ -1,0 +1,45 @@
+<view class="page">
+  <!-- 头部 -->
+  <view class="hero">
+    <view class="hero-title">毕业祝福墙</view>
+    <view class="hero-sub">已收到 {{total}} 条心意 · 每一句都是青春的注脚</view>
+  </view>
+
+  <!-- AI 生成祝福 -->
+  <view class="card">
+    <view class="card-title">✨ AI 帮你想一句祝福</view>
+    <view class="ai-bubble" wx:if="{{aiText}}">{{aiText}}<text class="cursor">|</text></view>
+    <view class="ai-empty" wx:else>点击下方按钮，让 AI 为你生成一句毕业祝福～</view>
+    <view class="ai-row">
+      <button class="mini-btn solid" bindtap="genAI">生成祝福</button>
+      <button class="mini-btn ghost" wx:if="{{aiText}}" bindtap="useAI">填入输入框</button>
+    </view>
+  </view>
+
+  <!-- 写祝福 -->
+  <view class="card">
+    <view class="card-title">写下你的祝福</view>
+    <view class="form-row">
+      <input class="ipt name" placeholder="你的名字" value="{{name}}" bindinput="onName" maxlength="12" />
+      <picker class="ipt role" range="{{roles}}" value="{{roleIdx}}" bindchange="onRoleChange">
+        <view class="picker">{{roles[roleIdx]}} ▾</view>
+      </picker>
+    </view>
+    <textarea class="ipt area" placeholder="写下你想对2027届毕业生说的话…" value="{{text}}" bindinput="onText" maxlength="120" />
+    <view class="counter">{{text.length}}/120</view>
+    <button class="send" bindtap="submit">送出祝福 💌</button>
+  </view>
+
+  <!-- 祝福列表 -->
+  <view class="msg card" wx:for="{{list}}" wx:key="id">
+    <view class="msg-head">
+      <view class="avatar {{item.role === '教师' ? 't' : item.role === '校友' ? 'a' : 's'}}">{{item.init}}</view>
+      <view class="who">
+        <view class="name">{{item.name}}</view>
+        <view class="meta">{{item.role}} · {{item.time}}</view>
+      </view>
+      <view class="like {{item.liked ? 'on' : ''}}" bindtap="onLike" data-id="{{item.id}}">👍 {{item.likes}}</view>
+    </view>
+    <view class="msg-text">{{item.text}}</view>
+  </view>
+</view>

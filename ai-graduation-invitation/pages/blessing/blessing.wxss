@@ -1,0 +1,221 @@
+/* pages/blessing/blessing.wxss */
+.page {
+  padding: 24rpx;
+}
+
+/* 头部 */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e2f7a, #3b53e0);
+  border-radius: 28rpx;
+  padding: 44rpx 36rpx;
+  color: #fff;
+  margin-bottom: 24rpx;
+}
+
+.hero::after {
+  content: '🎓';
+  position: absolute;
+  right: 24rpx;
+  top: 16rpx;
+  font-size: 110rpx;
+  opacity: 0.22;
+}
+
+.hero-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  letter-spacing: 4rpx;
+}
+
+.hero-sub {
+  margin-top: 14rpx;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* AI 生成 */
+.ai-bubble {
+  margin-top: 8rpx;
+  background: #f0f3ff;
+  border-radius: 18rpx;
+  padding: 24rpx;
+  font-size: 28rpx;
+  line-height: 1.7;
+  color: #33406b;
+  min-height: 80rpx;
+}
+
+.cursor {
+  animation: blink 0.8s infinite;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.ai-empty {
+  margin-top: 8rpx;
+  background: #f7f8fc;
+  border-radius: 18rpx;
+  padding: 24rpx;
+  font-size: 26rpx;
+  color: #98a1b5;
+  line-height: 1.6;
+}
+
+.ai-row {
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.mini-btn {
+  flex: 1;
+  margin: 0 10rpx;
+  border-radius: 40rpx;
+  font-size: 26rpx;
+  padding: 16rpx 0;
+  font-weight: 600;
+}
+
+.mini-btn.solid {
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--violet));
+}
+
+.mini-btn.ghost {
+  color: var(--primary);
+  background: #eef1ff;
+}
+
+/* 写祝福表单 */
+.form-row {
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.ipt {
+  background: #f4f6fb;
+  border-radius: 16rpx;
+  padding: 20rpx 24rpx;
+  font-size: 28rpx;
+}
+
+.ipt.name {
+  flex: 1;
+}
+
+.ipt.role {
+  width: 220rpx;
+  margin-left: 20rpx;
+}
+
+.picker {
+  line-height: 40rpx;
+  color: var(--text);
+}
+
+.ipt.area {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 160rpx;
+}
+
+.counter {
+  text-align: right;
+  font-size: 22rpx;
+  color: #b0b7c6;
+  margin-top: 8rpx;
+}
+
+.send {
+  margin-top: 24rpx;
+  width: 100%;
+  border-radius: 44rpx;
+  background: linear-gradient(135deg, var(--primary), var(--violet));
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
+  padding: 22rpx 0;
+}
+
+/* 祝福列表 */
+.msg {
+  margin-bottom: 20rpx;
+}
+
+.msg-head {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar.s {
+  background: linear-gradient(135deg, #3b53e0, #38bdf8);
+}
+
+.avatar.t {
+  background: linear-gradient(135deg, #f5b83d, #f08c2e);
+}
+
+.avatar.a {
+  background: linear-gradient(135deg, #6a3df0, #b04df0);
+}
+
+.who {
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.name {
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.meta {
+  font-size: 22rpx;
+  color: #98a1b5;
+  margin-top: 4rpx;
+}
+
+.like {
+  font-size: 24rpx;
+  color: #98a1b5;
+  border: 1rpx solid #e3e8f4;
+  border-radius: 999rpx;
+  padding: 10rpx 22rpx;
+}
+
+.like.on {
+  color: #e02020;
+  border-color: #ffd2d2;
+  background: #fff2f2;
+}
+
+.msg-text {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  line-height: 1.7;
+  color: #3c4257;
+}

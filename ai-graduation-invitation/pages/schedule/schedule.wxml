@@ -1,0 +1,28 @@
+<view class="page">
+  <!-- 头部信息 -->
+  <view class="card head">
+    <view class="head-date">🕘 {{EVENT.dateText}}</view>
+    <view class="head-place">📍 {{EVENT.location}}</view>
+  </view>
+
+  <!-- 流程时间轴 -->
+  <view class="tl">
+    <view class="tl-item" wx:for="{{list}}" wx:key="time">
+      <view class="tl-time">{{item.time}}</view>
+      <view class="tl-rail">
+        <view class="tl-dot {{item.highlight ? 'hl' : ''}}"></view>
+        <view class="tl-line" wx:if="{{index < list.length - 1}}"></view>
+      </view>
+      <view class="tl-body">
+        <view class="tl-card {{item.highlight ? 'hl-card' : ''}}">
+          <view class="tl-title">
+            {{item.title}}
+            <text class="badge" wx:if="{{item.badge}}">{{item.badge}}</text>
+          </view>
+          <view class="tl-desc">{{item.desc}}</view>
+          <view class="tl-place">📍 {{item.place}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
