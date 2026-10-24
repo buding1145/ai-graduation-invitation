@@ -51,31 +51,7 @@ ai-graduation-invitation
 | 示例祝福 / AI 祝福语素材 | `pages/blessing/blessing.js` 中的 `SEEDS` / `AI_*` |
 | 重新生成 tabBar 图标 | `node scripts/gen-icons.js` |
 
-## 📤 提交到 Gitee（作业要求 2、3）
 
-在 Gitee 上新建仓库（**不要**勾选“使用 README 初始化”），然后在项目根目录执行：
-
-```bash
-git init
-git add .
-git commit -m "feat: 人工智能学院2027届毕业典礼邀请函微信小程序"
-git remote add origin https://gitee.com/<你的用户名>/<仓库名>.git
-git push -u origin master
-```
-
-**Gitee 主页/项目地址（作业要求 3，请自行填写）：**
-
-> 项目地址：___________________________
-
-## 📸 项目运行截图（作业要求 4）
-
-请使用微信开发者工具打开项目，依次截图以下页面并随作业一起提交：
-
-1. 邀请函封面（神经网络粒子动画 + 倒计时）；
-2. 分别切换「教师 / 毕业生 / 校友」身份后的个性化问候语；
-3. 日程安排页（时间轴）；
-4. 祝福墙（点击「生成祝福」查看 AI 打字机效果，并发布一条祝福）；
-5. 参会指南页（展开一条常见问题）。
 
 ## 🛠 技术说明
 
